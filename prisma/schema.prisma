@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model CropScan {
+  id              String   @id @default(cuid())
+  clerkUserId     String
+  cropName        String
+  diseaseDetected String
+  severity        String   // "High" | "Moderate" | "Low" | "Healthy"
+  confidence      Float
+  treatmentPlan   String   @db.Text
+  organicOptions  String   @db.Text
+  imageUrl        String   @db.Text
+  latitude        Float?
+  longitude       Float?
+  altitudeMeters  Int?     @default(2400)
+  weatherSummary  String?
+  syncedOffline   Boolean  @default(false)
+  createdAt       DateTime @default(now())
+
+  @@index([clerkUserId])
+  @@index([cropName])
+}
+
+model AdvisoryQuery {
+  id              String   @id @default(cuid())
+  clerkUserId     String
+  userQuery       String   @db.Text
+  aiResponse      String   @db.Text
+  language        String   @default("Hindi") // "Hindi" | "Garhwali" | "English"
+  disclaimerShown Boolean  @default(true)
+  altitudeMeters  Int?     @default(2400)
+  createdAt       DateTime @default(now())
+
+  @@index([clerkUserId])
+}
+
