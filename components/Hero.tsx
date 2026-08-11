@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Hero() {
   return (
     <section
@@ -48,26 +50,29 @@ export default function Hero() {
             border: "1px solid rgba(76,175,80,0.2)",
           }}
         >
-          🌾 AI-Powered Crop Advisory
+          🌾 AI-Powered High-Altitude Advisory
         </span>
 
-        <h1 className="gradient-text font-bold leading-tight m-0"
-          style={{ fontSize: "clamp(2.2rem, 5vw, 3.6rem)" }}>
+        <h1
+          className="gradient-text font-bold leading-tight m-0"
+          style={{ fontSize: "clamp(2.2rem, 5vw, 3.6rem)" }}
+        >
           Smarter Farming for{" "}
           <br className="hidden sm:block" />
           High-Altitude Fields
         </h1>
 
-        <p className="mt-5 text-base md:text-lg leading-relaxed"
-          style={{ color: "var(--muted)", maxWidth: 560, margin: "20px auto 0" }}>
-          Real-time disease detection, vernacular chat, and geospatial intelligence — built for
-          the Kedarnath Valley and beyond.
+        <p
+          className="mt-5 text-base md:text-lg leading-relaxed"
+          style={{ color: "var(--muted)", maxWidth: 560, margin: "20px auto 0" }}
+        >
+          Real-time leaf disease diagnostics, vernacular chat in Hindi & Garhwali, and geospatial intelligence — built for the Kedarnath Valley (2,400m altitude).
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
-          <a
+          <Link
             id="hero-cta-primary"
-            href="/dashboard"
+            href="/scan"
             className="no-underline inline-flex items-center gap-2 px-7 py-3 rounded-xl text-sm font-semibold text-white transition-all duration-300"
             style={{
               background: "linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%)",
@@ -82,11 +87,11 @@ export default function Hero() {
               (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 16px rgba(45,122,58,0.3)";
             }}
           >
-            Open Dashboard →
-          </a>
-          <a
+            📸 Run Leaf Scan →
+          </Link>
+          <Link
             id="hero-cta-secondary"
-            href="/about"
+            href="/chat"
             className="no-underline inline-flex items-center gap-2 px-7 py-3 rounded-xl text-sm font-semibold transition-all duration-300"
             style={{
               color: "var(--primary)",
@@ -100,8 +105,8 @@ export default function Hero() {
               (e.currentTarget as HTMLElement).style.borderColor = "var(--border)";
             }}
           >
-            Learn More
-          </a>
+            🗣️ AI Advisory Chat
+          </Link>
         </div>
       </div>
     </section>

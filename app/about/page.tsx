@@ -199,9 +199,10 @@ export default function AboutPage() {
                                 "React.js",
                                 "Next.js",
                                 "Tailwind CSS",
-                                "Express.js",
-                                "MongoDB",
+                                "PostgreSQL",
+                                "Prisma ORM",
                                 "Gemini 1.5 Pro",
+                                "Clerk Auth",
                                 "Vercel",
                             ].map((tech) => (
                                 <span

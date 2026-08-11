@@ -21,54 +21,48 @@ export default function Footer() {
           <div>
             <Link href="/" className="flex items-center gap-2 no-underline mb-2">
               <span style={{ fontSize: 22 }}>🌿</span>
-              <span className="font-bold text-base"
-                style={{ color: "var(--primary)" }}>
+              <span className="font-bold text-base" style={{ color: "var(--primary)" }}>
                 Agri<span style={{ color: "var(--accent)" }}>Assist</span> AI
               </span>
             </Link>
-            <p className="m-0 text-xs" style={{ color: "var(--muted)", maxWidth: 300 }}>
-              Autonomous multi-modal crop advisory for high-altitude farming in the Kedarnath Valley.
+            <p className="m-0 text-xs text-[var(--muted)]" style={{ maxWidth: 320 }}>
+              Autonomous multi-modal crop advisory for high-altitude farming in the Mandakini Organic Produce Collective, Kedarnath Valley.
             </p>
           </div>
 
           {/* Links */}
           <div className="flex gap-8">
             <div className="flex flex-col gap-2">
-              <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: "var(--muted)" }}>
-                Navigate
+              <span className="text-xs font-semibold uppercase tracking-wider text-[var(--muted)]">
+                Advisory Tools
               </span>
               {[
-                { label: "Home", href: "/" },
-                { label: "Dashboard", href: "/dashboard" },
-                { label: "About", href: "/about" },
+                { label: "📸 Leaf Scan AI", href: "/scan" },
+                { label: "🗣️ Vernacular Chat", href: "/chat" },
+                { label: "📊 Farm Dashboard", href: "/dashboard" },
+                { label: "📜 Scan History", href: "/scans" },
               ].map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="no-underline text-sm transition-colors duration-200"
-                  style={{ color: "var(--foreground)" }}
-                  onMouseEnter={(e) => { e.currentTarget.style.color = "var(--primary)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.color = "var(--foreground)"; }}
+                  className="no-underline text-xs transition-colors duration-200 text-[var(--foreground)] hover:text-[var(--primary)]"
                 >
                   {link.label}
                 </Link>
               ))}
             </div>
             <div className="flex flex-col gap-2">
-              <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: "var(--muted)" }}>
-                Project
+              <span className="text-xs font-semibold uppercase tracking-wider text-[var(--muted)]">
+                Organization
               </span>
               {[
-                { label: "Login", href: "/login" },
-                { label: "GitHub", href: "https://github.com" },
+                { label: "About Project", href: "/about" },
+                { label: "Sign In", href: "/sign-in" },
               ].map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="no-underline text-sm transition-colors duration-200"
-                  style={{ color: "var(--foreground)" }}
-                  onMouseEnter={(e) => { e.currentTarget.style.color = "var(--primary)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.color = "var(--foreground)"; }}
+                  className="no-underline text-xs transition-colors duration-200 text-[var(--foreground)] hover:text-[var(--primary)]"
                 >
                   {link.label}
                 </Link>
@@ -82,11 +76,11 @@ export default function Footer() {
           className="mt-8 pt-5 flex flex-col sm:flex-row items-center justify-between gap-2"
           style={{ borderTop: "1px solid var(--border)" }}
         >
-          <p className="m-0 text-xs" style={{ color: "var(--muted)" }}>
-            © {new Date().getFullYear()} AgriAssist AI · TBI-GEU Summer Internship 2026
+          <p className="m-0 text-xs text-[var(--muted)]">
+            © {new Date().getFullYear()} AgriAssist AI · High-Altitude Agricultural Advisory
           </p>
-          <p className="m-0 text-xs" style={{ color: "var(--muted)" }}>
-            Built with ❤️ for grassroots MSMEs
+          <p className="m-0 text-xs text-[var(--muted)]">
+            Kedarnath Valley, Uttarakhand
           </p>
         </div>
       </div>
